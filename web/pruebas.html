@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gráfico de barras pequeño</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Gráfico de barras pequeño</h1>
+    <div class="chart">
+      <canvas id="myChart" width="200" height="100"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+  <script>
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var data = {
+      labels: ["A", "B", "C", "D", "E"],
+      datasets: [
+        {
+          label: "Datos",
+          data: [10, 20, 30, 40, 50],
+          backgroundColor: ["#0000FF", "#FF0000", "#00FF00", "#FFFF00", "#FF00FF"],
+        },
+      ],
+    };
+    var myChart = new Chart(ctx, {
+      type: "bar",
+      data: data,
+      options: {
+        title: {
+          text: "Gráfico de barras",
+          display: true,
+        },
+        legend: {
+          display: true,
+          position: "bottom",
+        },
+        width: 200,
+        height: 100,
+      },
+    });
+  </script>
+</body>
+</html>
